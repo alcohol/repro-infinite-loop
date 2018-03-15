@@ -28,7 +28,7 @@ services:
 
 ``` bash
 # create containers and install dependencies
-docker-compose up --build --detach
+docker-compose up --build -d
 docker-compose exec php composer install
 
 # first request will succeed (an error will be shown)
@@ -58,7 +58,7 @@ services:
 
 ``` bash
 # create containers and install dependencies
-HUID=$(id -u) HGID=$(id -g) docker-compose up --build --detach
+HUID=$(id -u) HGID=$(id -g) docker-compose up --build -d
 HUID=$(id -u) HGID=$(id -g) docker-compose exec php composer install
 
 # first request will succeed (an error will be shown)
