@@ -15,6 +15,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
 
   php:
+    user: ${HOST_UID}:${HOST_GID}
     build:
       context: .
       dockerfile: Dockerfile

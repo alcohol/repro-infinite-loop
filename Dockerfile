@@ -14,6 +14,8 @@ RUN curl -sS "http://download.newrelic.com/php_agent/release/newrelic-php5-${nr_
  && printf "\n\nnewrelic.enabled = true\n\
 newrelic.framework = symfony2\n\
 newrelic.license = $nr_license_key\n\
-newrelic.appname = $nr_app_name\n" >> /usr/local/etc/php/conf.d/newrelic.ini
+newrelic.appname = $nr_app_name\n" >> /usr/local/etc/php/conf.d/newrelic.ini \
+ && chmod 777 . -R \
+ && chmod 777 /var/log/newrelic
 
 WORKDIR /opt/app

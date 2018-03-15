@@ -27,10 +27,10 @@ services:
 Reproduction steps:
 
 ``` bash
-docker-compose up --build -d
+HOST_UID=$(id -u) HOST_GID=$(id -g) docker-compose up --build -d
 
 # install deps
-docker-compose exec php composer install 
+HOST_UID=$(id -u) HOST_GID=$(id -g) docker-compose exec php composer install
 
 # first request will succeed
 curl localhost:8000

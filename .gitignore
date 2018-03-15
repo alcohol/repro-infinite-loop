@@ -1,4 +1,6 @@
-/app/cache/
-/app/logs/
+/app/cache/*
+/app/logs/*
+!/app/cache/.placeholder
+!/app/logs/.placeholder
 /vendor/
 /docker-compose.override.yml
